@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0d0d;
+  --surface: #1a1a1a;
+  --border: #2a2a2a;
+  --accent: #c8f135;
+  --accent-dim: #a8cc20;
+  --text: #f0f0f0;
+  --muted: #888;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+header {
+  margin-bottom: 48px;
+}
+
+header h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: 3.5rem;
+  color: var(--accent);
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+header p {
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+.shorten-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.shorten-form input {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.shorten-form input:focus {
+  border-color: var(--accent);
+}
+
+.shorten-form button {
+  background: var(--accent);
+  color: #0d0d0d;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.shorten-form button:hover:not(:disabled) {
+  background: var(--accent-dim);
+}
+
+.shorten-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.url-list h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 40px 0 16px;
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.url-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+  transition: border-color 0.2s;
+}
+
+.url-card:hover {
+  border-color: #3a3a3a;
+}
+
+.url-card-main {
+  overflow: hidden;
+  flex: 1;
+}
+
+.short-url {
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: block;
+}
+
+.short-url:hover {
+  text-decoration: underline;
+}
+
+.original-url {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.url-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.clicks {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.copy-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
